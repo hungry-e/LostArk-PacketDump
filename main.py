@@ -68,6 +68,7 @@ def process_packet(packet):
             case _: # ?????
                 raise RuntimeError('Unknown Compression Type')            
         print(f"Decompressed: {list(payload_final)}\n")
+        print(f"Hex Dump: ")
         print(f"{hexdump(payload_final)}\n")
         if opcode == 48163:        
             price = int.from_bytes(payload_final[140:144], "little")
